@@ -10,6 +10,7 @@ import {
   Apple,
   UtensilsCrossed,
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const menuSections = [
   {
@@ -155,19 +156,79 @@ const menuSections = [
 
 function Menu() {
   return (
-    <div className='min-h-screen bg-saint text-sinner px-6 py-12'>
-      <h2 className='text-4xl font-serif text-center mb-8'>Our Menu</h2>
+    <main className='min-h-screen bg-saint text-sinner px-6 py-12'>
+      <Helmet>
+        <title>Menu | Saints & Sinners Bake Shop – Long Beach, CA</title>
+        <meta
+          name='description'
+          content='Browse the full menu at Saints & Sinners Bake Shop in Long Beach, CA. Enjoy fresh-baked pastries, sweet and savory toasts, handmade sandwiches, and specialty coffee — all made in-house daily.'
+        />
+
+        <link rel='canonical' href='https://saintsandsinnersbakeshop.com/menu' />
+        <meta property='og:title' content='Menu | Saints & Sinners Bake Shop' />
+        <meta
+          property='og:description'
+          content='Explore our full selection of baked goods, sweet and savory toast, artisan coffee, and seasonal favorites.'
+        />
+        <meta property='og:url' content='https://saintsandsinnersbakeshop.com/menu' />
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:image'
+          content='https://saintsandsinnersbakeshop.com/images/social-preview.jpg'
+        />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:title' content='Menu | Saints & Sinners Bake Shop' />
+        <meta
+          name='twitter:description'
+          content='Handcrafted pastries, sandwiches, toast, and coffee in Long Beach. See our menu.'
+        />
+        <meta
+          name='twitter:image'
+          content='https://saintsandsinnersbakeshop.com/images/social-preview.jpg'
+        />
+        <meta
+          name='keywords'
+          content='Long Beach bakery menu, pastries, toast, coffee, breakfast, custom cakes, Saints and Sinners Bake Shop'
+        />
+
+        <script type='application/ld+json'>
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Menu',
+            name: 'Saints & Sinners Bake Shop Menu',
+            hasMenuSection: menuSections.map((section) => ({
+              '@type': 'MenuSection',
+              name: section.title,
+              hasMenuItem: section.items.map((item) => ({
+                '@type': 'MenuItem',
+                name: item.name,
+                ...(item.price && {
+                  offers: {
+                    '@type': 'Offer',
+                    price: item.price.replace(/[^0-9.]/g, ''),
+                    priceCurrency: 'USD',
+                  },
+                }),
+              })),
+            })),
+          })}
+        </script>
+      </Helmet>
+
+      <h1 className='text-4xl font-serif text-center mb-8'>Our Menu</h1>
 
       {menuSections.map((section, idx) => (
-        <div key={idx} className='mb-8'>
+        <section key={idx} className='mb-8' aria-labelledby={`menu-section-${idx}`}>
           {/* Mobile accordion */}
           <details className='md:hidden border border-sinful-red rounded overflow-hidden'>
-            <summary className='bg-sinful-red text-saint px-4 py-3 cursor-pointer text-lg font-serif'>
+            <summary
+              id={`menu-section-${idx}`}
+              className='bg-sinful-red text-saint px-4 py-3 cursor-pointer text-lg font-serif'>
               {section.title}
             </summary>
-            <div className='divide-y divide-slate-200'>
+            <ul className='divide-y divide-slate-200'>
               {section.items.map((item, index) => (
-                <div
+                <li
                   key={index}
                   className='flex justify-between items-start px-4 py-3 bg-sinner hover:bg-sinner/90 transition'>
                   <div className='flex items-center space-x-3'>
@@ -180,22 +241,24 @@ function Menu() {
                   {item.price && (
                     <p className='text-goldleaf font-serif whitespace-nowrap'>{item.price}</p>
                   )}
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </details>
 
           {/* Desktop grid */}
           <div className='hidden md:block'>
-            <h3 className='text-2xl font-serif mb-4 pb-2 flex items-center gap-2'>
+            <h2
+              id={`menu-section-${idx}`}
+              className='text-2xl font-serif mb-4 pb-2 flex items-center gap-2'>
               <span className='border-b border-sinful-red flex-grow'></span>
               {section.title}
               <span className='border-b border-sinful-red flex-grow'></span>
-            </h3>
+            </h2>
 
-            <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-2'>
+            <ul className='grid gap-6 md:grid-cols-2 lg:grid-cols-2'>
               {section.items.map((item, index) => (
-                <div
+                <li
                   key={index}
                   className='group flex justify-between items-start p-4 bg-sinner rounded-xl shadow border border-slate-200 hover:ring-1 hover:ring-sinful-red/40 transition'>
                   <div className='flex items-center space-x-3'>
@@ -210,13 +273,13 @@ function Menu() {
                       {item.price}
                     </p>
                   )}
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
-        </div>
+        </section>
       ))}
-    </div>
+    </main>
   );
 }
 

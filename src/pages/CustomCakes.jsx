@@ -3,16 +3,45 @@ import { Helmet } from 'react-helmet-async';
 
 function CustomCakes() {
   return (
-    <section className='bg-saint text-sinner px-6 py-16'>
+    <main className='bg-saint text-sinner px-6 py-16'>
       <Helmet>
-        <title>Custom Cakes | Saints & Sinners Bake Shop</title>
+        <title>Custom Cakes | Saints & Sinners Bake Shop – Long Beach, CA</title>
         <meta
           name='description'
-          content='Order custom buttercream and fondant cakes for birthdays, weddings, and all occasions from Saints & Sinners Bake Shop in Long Beach.'
+          content='Order custom buttercream and fondant cakes for birthdays, weddings, and all occasions from Saints & Sinners Bake Shop in Long Beach, CA.'
         />
+        <link rel='canonical' href='https://saintsandsinnersbakeshop.com/custom-cakes' />
+        <script type='application/ld+json'>
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: 'Custom Cakes',
+            description:
+              'Made-to-order buttercream and fondant cakes for birthdays, weddings, anniversaries, and more. Handmade by Saints & Sinners Bake Shop in Long Beach, CA.',
+            brand: {
+              '@type': 'Brand',
+              name: 'Saints & Sinners Bake Shop',
+            },
+            offers: {
+              '@type': 'Offer',
+              availability: 'https://schema.org/InStock',
+              priceCurrency: 'USD',
+              price: '0', // Optional: placeholder, since price is quote-based
+              priceSpecification: {
+                '@type': 'PriceSpecification',
+                priceCurrency: 'USD',
+                description: 'Pricing varies based on design complexity and special additions',
+              },
+              seller: {
+                '@type': 'Organization',
+                name: 'Saints & Sinners Bake Shop',
+              },
+            },
+          })}
+        </script>
       </Helmet>
 
-      <div className='max-w-3xl mx-auto'>
+      <article className='max-w-3xl mx-auto'>
         <h1 className='text-4xl font-serif mb-6 text-center'>Custom Decorated Cakes</h1>
 
         <p className='text-lg font-light leading-relaxed mb-4'>
@@ -41,7 +70,8 @@ function CustomCakes() {
           For inquiries and quotes, please email us at:{' '}
           <a
             href='mailto:email@saintsandsinnersbakeshop.com'
-            className='underline hover:text-sinful-red'>
+            className='underline hover:text-sinful-red'
+            aria-label='Email Saints and Sinners Bake Shop'>
             email@saintsandsinnersbakeshop.com
           </a>
         </p>
@@ -50,8 +80,8 @@ function CustomCakes() {
           Below are just a few examples of the wide variety of designs we can create — from elegant
           florals to themed character cakes.
         </p>
-      </div>
-    </section>
+      </article>
+    </main>
   );
 }
 

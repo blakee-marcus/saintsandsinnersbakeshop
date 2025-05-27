@@ -3,17 +3,43 @@ import { Helmet } from 'react-helmet-async';
 
 function CookieCakes() {
   return (
-    <section className='bg-saint text-sinner px-6 py-16'>
+    <main className='bg-saint text-sinner px-6 py-16'>
       <Helmet>
-        <title>Cookie Cakes | Saints & Sinners Bake Shop</title>
+        <title>Cookie Cakes | Saints & Sinners Bake Shop – Long Beach, CA</title>
         <meta
           name='description'
-          content='Order custom-decorated Cookie Cakes from Saints & Sinners Bake Shop. Choose your size and color scheme. A perfect gift for any occasion.'
+          content='Order custom-decorated Cookie Cakes from Saints & Sinners Bake Shop in Long Beach, CA. Choose your size and color scheme. A perfect gift for birthdays, holidays, or any celebration.'
         />
+        <link rel='canonical' href='https://saintsandsinnersbakeshop.com/cookie-cakes' />
+        <script type='application/ld+json'>
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: 'Custom Cookie Cakes',
+            description:
+              'Custom-decorated Cookie Cakes made from chocolate chip dough and buttercream frosting. Choose from multiple sizes and any color scheme. Available for pickup in Long Beach, CA.',
+            brand: {
+              '@type': 'Brand',
+              name: 'Saints & Sinners Bake Shop',
+            },
+            offers: {
+              '@type': 'AggregateOffer',
+              priceCurrency: 'USD',
+              lowPrice: '25.00',
+              highPrice: '55.00',
+              offerCount: 4,
+              availability: 'https://schema.org/InStock',
+              seller: {
+                '@type': 'Organization',
+                name: 'Saints & Sinners Bake Shop',
+              },
+            },
+          })}
+        </script>
       </Helmet>
 
-      <div className='max-w-3xl mx-auto'>
-        <h1 className='text-4xl font-serif mb-6 text-center'>Cookie Cakes</h1>
+      <article className='max-w-3xl mx-auto'>
+        <h1 className='text-4xl font-serif mb-6 text-center'>Custom Cookie Cakes</h1>
 
         <p className='text-lg font-light leading-relaxed mb-6'>
           Our cookie cakes are made with classic chocolate chip cookie dough and can be customized
@@ -33,8 +59,8 @@ function CookieCakes() {
           <li>12 inch Cookie Cake – $45</li>
           <li>14 inch Cookie Cake – $55</li>
         </ul>
-      </div>
-    </section>
+      </article>
+    </main>
   );
 }
 

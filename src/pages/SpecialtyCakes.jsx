@@ -3,47 +3,109 @@ import { Helmet } from 'react-helmet-async';
 
 function SpecialtyCakes() {
   return (
-    <div className='min-h-screen bg-saint text-sinner px-6 py-12'>
+    <main className='min-h-screen bg-saint text-sinner px-6 py-12'>
       <Helmet>
-        <title>Specialty Cakes | Saints & Sinners Bake Shop</title>
+        <title>Custom Specialty Cakes | Saints & Sinners Bake Shop – Long Beach, CA</title>
         <meta
           name='description'
-          content='Explore our handcrafted specialty cakes at Saints & Sinners Bake Shop in Long Beach. Made to order with a variety of flavors and frostings.'
+          content='Order custom specialty cakes from Saints & Sinners Bake Shop in Long Beach. Choose from flavors like Red Velvet, S’more, and Chocolate Caramel.'
         />
+        <meta
+          name='keywords'
+          content='custom cakes Long Beach, specialty cakes, wedding cakes, birthday cakes, Saints and Sinners Bake Shop, order cake Long Beach'
+        />
+        <link rel='canonical' href='https://saintsandsinnersbakeshop.com/specialty-cakes' />
+
+        {/* Open Graph */}
+        <meta property='og:title' content='Custom Specialty Cakes | Saints & Sinners Bake Shop' />
+        <meta
+          property='og:description'
+          content='Made-to-order specialty cakes for weddings, birthdays, and celebrations. Available in a variety of flavors. Order in Long Beach.'
+        />
+        <meta property='og:url' content='https://saintsandsinnersbakeshop.com/specialty-cakes' />
+        <meta property='og:type' content='product.group' />
+        <meta
+          property='og:image'
+          content='https://saintsandsinnersbakeshop.com/images/specialty-cakes.jpg'
+        />
+
+        {/* Twitter Card */}
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:title' content='Custom Specialty Cakes | Saints & Sinners Bake Shop' />
+        <meta
+          name='twitter:description'
+          content='Explore handcrafted cakes with custom flavors and frostings. Made to order in Long Beach, CA.'
+        />
+        <meta
+          name='twitter:image'
+          content='https://saintsandsinnersbakeshop.com/images/specialty-cakes.jpg'
+        />
+
+        {/* Structured Data */}
+        <script type='application/ld+json'>
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ProductGroup',
+            name: 'Specialty Cakes',
+            description:
+              'Handcrafted specialty cakes made to order with custom base flavors, frostings, and seasonal options. Available from Saints & Sinners Bake Shop in Long Beach, CA.',
+            brand: {
+              '@type': 'Brand',
+              name: 'Saints & Sinners Bake Shop',
+            },
+            hasVariant: [
+              { '@type': 'Product', name: 'Red Velvet Cake' },
+              { '@type': 'Product', name: 'S’more Cake' },
+              { '@type': 'Product', name: 'Peanut Butter Cup Cake' },
+              { '@type': 'Product', name: 'Triple Chocolate Cake' },
+              { '@type': 'Product', name: 'Chocolate Dipped Strawberry Cake' },
+            ],
+            offers: {
+              '@type': 'Offer',
+              priceCurrency: 'USD',
+              price: '0.00',
+              availability: 'https://schema.org/InStock',
+              seller: {
+                '@type': 'Organization',
+                name: 'Saints & Sinners Bake Shop',
+              },
+            },
+          })}
+        </script>
       </Helmet>
 
       <h1 className='text-4xl font-serif text-center mb-8'>Specialty Cakes</h1>
 
-      <div className='max-w-3xl mx-auto space-y-6'>
+      <article className='max-w-3xl mx-auto space-y-6 text-lg leading-relaxed font-light'>
         <p>
-          Interested in getting a cake for your celebration? Please email us regarding the ordering
-          of a cake. All cakes are made to order, so advance ordering is necessary. Two week advance
-          notice is optimal, since spots book up fast. We will help you pick the right size cake for
-          your occasion. Every size and style is different, so we will help price out a cake for
-          your needs.
+          Interested in ordering a custom cake for your celebration? All of our specialty cakes are
+          made to order, so advance notice is required. We recommend placing orders at least{' '}
+          <strong>two weeks in advance</strong>, as availability fills up quickly.
         </p>
 
         <p>
-          Our cakes come standard with three layers of cake and are made with one of the following
-          frostings: American buttercream, Swiss buttercream, cream cheese, chocolate ganache, or
-          whipped cream. Specialty flavors determine the frosting type. Fresh fruit and floral
-          decorations are extra as well.
+          Our cakes come standard with three layers and your choice of frosting, including American
+          buttercream, Swiss buttercream, cream cheese, chocolate ganache, or whipped cream.
+          Specialty flavors may require specific frostings. Add-ons like fresh fruit and floral
+          decor are available for an extra charge.
         </p>
 
         <p>
-          We are a traditional bakery; if you have any dietary restrictions, we can only offer a
-          vegan chocolate cake and vegan buttercream as an option.
-        </p>
-
-        <p>Please email for a quote (too many sizes and prices to list here).</p>
-
-        <p className='font-semibold'>
-          **Birthday messages/writing cost extra and are not included in quote**
+          We’re a traditional bakery and offer one vegan option: chocolate cake with vegan
+          buttercream.
         </p>
 
         <p>
-          <strong>Contact:</strong>{' '}
-          <a href='mailto:email@saintsandsinnersbakeshop.com' className='text-sinful-red underline'>
+          <strong>Note:</strong> Birthday messages or writing are not included in base quotes and
+          incur an additional fee.
+        </p>
+
+        <p>
+          <strong>Email us for a custom quote:</strong>{' '}
+          <a
+            href='mailto:email@saintsandsinnersbakeshop.com'
+            className='text-sinful-red underline'
+            aria-label='Email Saints and Sinners Bake Shop'>
             email@saintsandsinnersbakeshop.com
           </a>
         </p>
@@ -75,8 +137,8 @@ function SpecialtyCakes() {
             <li>Chocolate Caramel</li>
           </ul>
         </div>
-      </div>
-    </div>
+      </article>
+    </main>
   );
 }
 

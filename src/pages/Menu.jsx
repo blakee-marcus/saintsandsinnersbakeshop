@@ -1,0 +1,223 @@
+import React from 'react';
+import {
+  Coffee,
+  Croissant,
+  Cookie,
+  Cake,
+  CupSoda,
+  ChefHat,
+  Sandwich,
+  Apple,
+  UtensilsCrossed,
+} from 'lucide-react';
+
+const menuSections = [
+  {
+    title: 'Baked Goods',
+    items: [
+      { name: 'Scones', icon: <Croissant className='w-6 h-6 text-sinful-red' /> },
+      { name: 'Bagels', icon: <ChefHat className='w-6 h-6 text-sinful-red' /> },
+      {
+        name: 'Garlic Cheddar Drop Biscuits',
+        icon: <ChefHat className='w-6 h-6 text-sinful-red' />,
+      },
+      { name: 'Brownies', icon: <Cake className='w-6 h-6 text-sinful-red' /> },
+      { name: 'Cookies', icon: <Cookie className='w-6 h-6 text-sinful-red' /> },
+      { name: 'Cheese Danishes', icon: <Croissant className='w-6 h-6 text-sinful-red' /> },
+      { name: 'Conchas', icon: <ChefHat className='w-6 h-6 text-sinful-red' /> },
+      {
+        name: 'Cinnamon Rolls (Weekends Only)',
+        icon: <Croissant className='w-6 h-6 text-sinful-red' />,
+      },
+      {
+        name: 'Sourdough Bread (Pre-order)',
+        icon: <ChefHat className='w-6 h-6 text-sinful-red' />,
+      },
+      {
+        name: 'Mini Bundt Cakes (Special Order)',
+        icon: <Cake className='w-6 h-6 text-sinful-red' />,
+      },
+      {
+        name: 'Buttermilk Biscuits (Special Order)',
+        icon: <ChefHat className='w-6 h-6 text-sinful-red' />,
+      },
+    ],
+  },
+  {
+    title: 'Sweet Toast',
+    items: [
+      {
+        name: 'Basic – Butter & Jam',
+        price: '$3',
+        icon: <UtensilsCrossed className='w-6 h-6 text-frosting' />,
+      },
+      {
+        name: 'Simple & Sweet – Sweet Cream Cheese & Berries',
+        price: '$5',
+        icon: <UtensilsCrossed className='w-6 h-6 text-frosting' />,
+      },
+      {
+        name: 'Nutella Berry – Nutella & Strawberries',
+        price: '$5',
+        icon: <UtensilsCrossed className='w-6 h-6 text-frosting' />,
+      },
+      {
+        name: 'Nutty Banana – Peanut Butter, Banana, Honey, Chia Seeds',
+        price: '$5',
+        icon: <UtensilsCrossed className='w-6 h-6 text-frosting' />,
+      },
+    ],
+  },
+  {
+    title: 'Savory Toast',
+    items: [
+      {
+        name: 'Tart & Tangy – Cream Cheese, Tomato, Lemon Pepper',
+        price: '$5',
+        icon: <UtensilsCrossed className='w-6 h-6 text-goldleaf' />,
+      },
+      {
+        name: 'Margherita – Garlic Herb Cream Cheese, Pesto, Mozzarella, Tomato, Basil',
+        price: '$6.5',
+        icon: <UtensilsCrossed className='w-6 h-6 text-goldleaf' />,
+      },
+      {
+        name: 'Red, White & Green – Pesto, Tomato, Avocado, Feta, Pine Nuts',
+        price: '$7',
+        icon: <UtensilsCrossed className='w-6 h-6 text-goldleaf' />,
+      },
+      {
+        name: 'Cali Popper – Cream Cheese, Cheddar, Jalapeño, Avocado',
+        price: '$7.5',
+        icon: <UtensilsCrossed className='w-6 h-6 text-goldleaf' />,
+      },
+      {
+        name: 'Deluxe Ham & Cheese – Garlic Herb Cream Cheese, Cheddar, Ham, Tomato, Avocado, Micro Greens',
+        price: '$8.5',
+        icon: <UtensilsCrossed className='w-6 h-6 text-goldleaf' />,
+      },
+      {
+        name: 'Cali BLT – Butter, Cheddar, Bacon, Tomato, Avocado, Micro Greens',
+        price: '$8',
+        icon: <UtensilsCrossed className='w-6 h-6 text-goldleaf' />,
+      },
+      {
+        name: 'Italian – Garlic Herb Cream Cheese, Ham, Salami, Tomato, Asiago, Basil',
+        price: '$8.5',
+        icon: <UtensilsCrossed className='w-6 h-6 text-goldleaf' />,
+      },
+      {
+        name: 'Extras – Bacon, Ham, Salami, Avocado, or Cream Cheese',
+        price: '$1 each',
+        icon: <UtensilsCrossed className='w-6 h-6 text-goldleaf' />,
+      },
+    ],
+  },
+  {
+    title: 'Sandwiches',
+    items: [
+      {
+        name: 'Garlic Cheddar Drop Biscuit – With Cream Cheese, Cheddar & Ham',
+        price: '$5',
+        icon: <Sandwich className='w-6 h-6 text-sinful-red' />,
+      },
+      {
+        name: 'Bagel Sandwich – Any Bagel + Garlic Herb Cream Cheese, Cheddar & Ham',
+        price: '$7',
+        icon: <Sandwich className='w-6 h-6 text-sinful-red' />,
+      },
+    ],
+  },
+  {
+    title: 'Yogurt & Cereal',
+    items: [
+      {
+        name: 'Granola & Berries – Plain Greek Yogurt, House Granola, Berries, Honey',
+        price: '$6.5',
+        icon: <Apple className='w-6 h-6 text-halo' />,
+      },
+      {
+        name: 'Granola Cereal – With Berries & Milk of Choice',
+        price: '$6',
+        icon: <Apple className='w-6 h-6 text-halo' />,
+      },
+    ],
+  },
+  {
+    title: 'Coffee & Tea',
+    items: [
+      { name: 'Espresso (The Boy and The Bear)', icon: <Coffee className='w-6 h-6 text-halo' /> },
+      { name: 'Specialty Coffee Drinks', icon: <Coffee className='w-6 h-6 text-halo' /> },
+      { name: 'Sun Garden Loose Leaf Teas', icon: <CupSoda className='w-6 h-6 text-halo' /> },
+    ],
+  },
+];
+
+function Menu() {
+  return (
+    <div className='min-h-screen bg-saint text-sinner px-6 py-12'>
+      <h2 className='text-4xl font-serif text-center mb-8'>Our Menu</h2>
+
+      {menuSections.map((section, idx) => (
+        <div key={idx} className='mb-8'>
+          {/* Mobile accordion */}
+          <details className='md:hidden border border-sinful-red rounded overflow-hidden'>
+            <summary className='bg-sinful-red text-saint px-4 py-3 cursor-pointer text-lg font-serif'>
+              {section.title}
+            </summary>
+            <div className='divide-y divide-slate-200'>
+              {section.items.map((item, index) => (
+                <div
+                  key={index}
+                  className='flex justify-between items-start px-4 py-3 bg-sinner hover:bg-sinner/90 transition'>
+                  <div className='flex items-center space-x-3'>
+                    {item.icon &&
+                      React.cloneElement(item.icon, {
+                        className: `${item.icon.props.className} transition-transform duration-300`,
+                      })}
+                    <p className='text-saint font-serif'>{item.name}</p>
+                  </div>
+                  {item.price && (
+                    <p className='text-goldleaf font-serif whitespace-nowrap'>{item.price}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </details>
+
+          {/* Desktop grid */}
+          <div className='hidden md:block'>
+            <h3 className='text-2xl font-serif mb-4 pb-2 flex items-center gap-2'>
+              <span className='border-b border-sinful-red flex-grow'></span>
+              {section.title}
+              <span className='border-b border-sinful-red flex-grow'></span>
+            </h3>
+
+            <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-2'>
+              {section.items.map((item, index) => (
+                <div
+                  key={index}
+                  className='group flex justify-between items-start p-4 bg-sinner rounded-xl shadow border border-slate-200 hover:ring-1 hover:ring-sinful-red/40 transition'>
+                  <div className='flex items-center space-x-3'>
+                    {item.icon &&
+                      React.cloneElement(item.icon, {
+                        className: `${item.icon.props.className} transition-transform duration-300 group-hover:rotate-6`,
+                      })}
+                    <p className='text-lg font-serif font-semibold text-saint'>{item.name}</p>
+                  </div>
+                  {item.price && (
+                    <p className='text-base font-serif font-semibold text-goldleaf whitespace-nowrap'>
+                      {item.price}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Menu;
